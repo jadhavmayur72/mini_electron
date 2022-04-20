@@ -1,0 +1,48 @@
+#container{
+    margin: auto;
+}
+#todo_ip{
+    margin: auto;
+
+    /* border:  1px solid red; */
+    height: 100px;
+    display: flex;
+    background-color: lightcyan;
+}
+.inputbox{
+    height: 20px;
+    vertical-align: middle;
+    /* border: 1px solid black; */
+     padding: 10px;
+    margin: 20px;
+    outline: none;
+    border: none;
+    border-left: 1px solid gray;
+    border-bottom: 3px solid gray;
+    border-radius: 33px;
+}
+.inputbox-check{
+    /* /* width: 30px; */
+    height: 20px; 
+    margin: 20px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-left: 1px solid gray;
+    border-bottom: 3px solid gray;
+    border-radius: 33px;
+ 
+}
+.btn-add{
+    background-color: rgb(183, 236, 220);
+    width: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    height: 35px;
+    padding: 2px;
+    margin: 20px;
+    border-left: 1px solid gray;
+    border-bottom: 3px solid gray;
+    border-radius: 12px;
+}
