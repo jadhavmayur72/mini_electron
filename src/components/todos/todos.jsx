@@ -84,7 +84,7 @@ export const Todos = () => {
    
      
       <div id="showdata">
-        <table>
+        <table className="fix_title">
           <thead>
             <tr>
               <th className="th_col1">Title</th>
@@ -96,7 +96,7 @@ export const Todos = () => {
         {dataList.map((e, i) => {
           return (
             <div key={i}>
-              <table>
+              <table className="scrolling-table">
                 <tbody>
                   <tr>
                     <th className="th_col">

@@ -7,6 +7,7 @@
     background-color: lightcyan;
 
 }
+
 .title_{
     text-align: center;
     background:linear-gradient(45deg,rgb(223, 170, 170),rgb(146, 178, 184),rgb(124, 101, 101));
@@ -90,7 +91,28 @@
     width: 50%;
     background-color: rgb(223, 235, 235);
     padding: 15px;
+    height: 400px;
+    /* border: 1px solid red; */
+    overflow-y: scroll;
+
     
+}
+.fix_title{
+    position: absolute;
+    top: auto;
+    /* background-color: aquamarine; */
+    z-index: 1;
+    opacity: 100%;
+
+}
+.scrolling-table{
+    position:relative;
+    top: 25px;
+    z-index: 2;
+ 
+
+
+
 }
 tr:hover{
     background-color: rgb(203, 235, 235);
@@ -111,3 +133,149 @@ tr:hover{
 
     /* padding: 15px; */
 }
+
+@media screen and (max-width: 950px) {
+
+    #outerContainer{
+       
+        display: flex;
+        flex-direction: column;
+        background-color: lightcyan;
+    
+    }
+    #todo_ip{
+        margin: auto;
+        width: 50%;
+        /* border:  1px solid red; */
+        /* height: 100px; */
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: lightcyan;
+
+
+    }
+    #showdata{
+        width: 80%;
+        background-color: rgb(223, 235, 235);
+        padding: 15px;
+        margin: auto;
+        
+        
+    }
+    .inputbox{
+        width: 50%;
+        height: 20px;
+        vertical-align: middle;
+        /* border: 1px solid black; */
+         padding: 10px;
+        margin: 20px;
+        outline: none;
+        border: none;
+        border-left: 1px solid gray;
+        border-bottom: 3px solid gray;
+        border-radius: 33px;
+        
+    }
+    .inputbox-check{
+       width: 20%;
+        height: 20px; 
+        margin: 20px;
+        padding: 10px;
+        outline: none;
+        border: none;
+        border-left: 1px solid gray;
+        border-bottom: 3px solid gray;
+        border-radius: 33px;
+     
+    }
+    .btn-add{
+        background-color: rgb(183, 236, 220);
+        width: 25px;
+        font-size: 25px;
+        font-weight: bold;
+        outline: none;
+        border: none;
+        height: 35px;
+        padding: 2px;
+        margin: 20px;
+        border-left: 1px solid gray;
+        border-bottom: 3px solid gray;
+        border-radius: 12px;
+        background:linear-gradient(45deg,rgb(223, 170, 170),rgb(146, 178, 184),rgb(124, 101, 101));
+    
+    }
+   
+  }
+  @media screen and (max-width: 1060px) {
+
+    #outerContainer{
+       
+        display: flex;
+        flex-direction: column;
+        background-color: lightcyan;
+    
+    }
+    #todo_ip{
+        margin: auto;
+        width: 50%;
+        /* border:  1px solid red; */
+        /* height: 100px; */
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: lightcyan;
+
+
+    }
+    #showdata{
+        width: 80%;
+        background-color: rgb(223, 235, 235);
+        padding: 15px;
+        margin: auto;
+        
+    }
+    .inputbox{
+        width: 50%;
+        height: 20px;
+        vertical-align: middle;
+        /* border: 1px solid black; */
+         padding: 10px;
+        margin: 20px;
+        outline: none;
+        border: none;
+        border-left: 1px solid gray;
+        border-bottom: 3px solid gray;
+        border-radius: 33px;
+        
+    }
+    .inputbox-check{
+       width: 20%;
+        height: 20px; 
+        margin: 20px;
+        padding: 10px;
+        outline: none;
+        border: none;
+        border-left: 1px solid gray;
+        border-bottom: 3px solid gray;
+        border-radius: 33px;
+     
+    }
+    .btn-add{
+        background-color: rgb(183, 236, 220);
+        width: 25px;
+        font-size: 25px;
+        font-weight: bold;
+        outline: none;
+        border: none;
+        height: 35px;
+        padding: 2px;
+        margin: 20px;
+        border-left: 1px solid gray;
+        border-bottom: 3px solid gray;
+        border-radius: 12px;
+        background:linear-gradient(45deg,rgb(223, 170, 170),rgb(146, 178, 184),rgb(124, 101, 101));
+    
+    }
+   
+  }
