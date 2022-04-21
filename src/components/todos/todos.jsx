@@ -1,70 +1,143 @@
+import { useState, useEffect } from "react";
 
-import { useState } from "react"
-import { useDispatch,useSelector } from "react-redux"
-import "../style/todoip.css"
-import { addTodo } from "../../redux/action/add"
+import { useDispatch } from "react-redux";
+import "../style/todoip.css";
+import { addTodo } from "../../redux/action/add";
 
+export const Todos = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [stat, setStat] = useState("");
+  const dispatch = useDispatch();
+  const [dataList, setDataList] = useState([]);
 
+  useEffect(() => {
+    getData();
+  }, []);
 
-
-export const Todos=()=>{
-    const [title,setTitle]=useState("")
-    const [description,setDescription]=useState("")
-    const [stat,setStat]=useState("")
-    const dispatch=useDispatch()
-    let dataList=useSelector((state)=>state.todoReducers.list)
-
-
-
-
-
-
-    return(
-        <div id="container">
-            
-           <div id="todo_ip"> 
-           <input className="inputbox" type="text" name="title" placeholder="Title" value={title} onChange={(el)=>setTitle(el.target.value)} />
-            <input className="inputbox" type="text" name="discription"  placeholder="Discription" value={description} onChange={(el)=>setDescription(el.target.value)}/>
-            <input className="inputbox" type="date" name="status" value={stat} onChange={(el)=>setStat(el.target.value)}  />
-       
-            <button className="btn-add" onClick={()=>{
-                const inputData={
-                    title:title,
-                    desc:description,
-                    date:stat
-                }
-                console.log(inputData)
-                dispatch(addTodo(inputData));
-                setTitle("");
-                setDescription("")
-                setStat("")
-            }}  >+</button></div>
+  const getData = async () => {
+    let req = await fetch(" http://localhost:9001/todos");
+    let res = await req.json();
+    // console.log(res)
+    setDataList(res);
+  };
 
 
-            <div className="showdata">
-                {
-                    dataList.map((el,i)=>{
 
-                        return(
-                            <div key={i}>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <th>{el.inputData.title}</th>
-                                            <th>{el.inputData.desc}</th>
-                                            <th>{el.inputData.date}</th>
-                                            <th><button>Delete</button></th>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        )
+  const addData = () => {
+    const inputData = {
+      status: false,
+      title: title,
+      desc: description,
+      date: stat,
+    };
+    fetch(`http://localhost:9001/todos`, {
+      method: "POST",
+      body: JSON.stringify(inputData),
+      headers: {
+        "content-type": "application/json",
+      },
+    } ).then(getData)
+   
+    console.log(inputData);
+    dispatch(addTodo(inputData));
 
-                    })
-                }
+    setTitle("");
+    setDescription("");
+    setStat("");
+  };
 
-            </div>
+  return (
+      <>  <h1 className="title_">TODO APP</h1>
+    <div id="outerContainer">
+        
 
+        <div id="todo_ip">
+          <input
+            className="inputbox"
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={title}
+            onChange={(el) => setTitle(el.target.value)}
+          />
+          <input
+            className="inputbox"
+            type="text"
+            name="discription"
+            placeholder="Discription"
+            value={description}
+            onChange={(el) => setDescription(el.target.value)}
+          />
+          <input
+            className="inputbox"
+            type="date"
+            name="status"
+            value={stat}
+            onChange={(el) => setStat(el.target.value)}
+          />
+
+          <button className="btn-add" onClick={addData}>
+            +
+          </button>
         </div>
-    )
-}
+   
+     
+      <div id="showdata">
+        <table>
+          <thead>
+            <tr>
+              <th className="th_col1">Title</th>
+              <th className="th_col1">Description</th>
+              <th className="th_col1">Date</th>
+            </tr>
+          </thead>
+        </table>
+        {dataList.map((e, i) => {
+          return (
+            <div key={i}>
+              <table>
+                <tbody>
+                  <tr>
+                    <th className="th_col">
+                      {" "}
+                      <h3 key={i}>{e.title}</h3>
+                    </th>
+                    <th className="th_col">
+                      <h4>{e.desc}</h4>
+                    </th>
+                    <th className="th_col">
+                      <h4>{e.date}</h4>
+                    </th>
+                    <th className="th_col" 
+                      onClick={() => {
+                        fetch(`http://localhost:9001/todos/${e.id}`, {
+                          method: "DELETE",
+                          body: JSON.stringify(dataList),
+                          headers: {
+                            "content-type": "application/json",
+                          },
+                        }).then((res) => {
+                          res.json().then((req) => {
+                            getData();
+                          });
+                        });
+                      }}>
+                      <button className="del-btn"
+                      
+                      >
+                        🧺
+                      </button>
+                    </th>
+                
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    </>
+  );
+};

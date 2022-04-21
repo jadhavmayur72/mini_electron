@@ -1,9 +1,26 @@
+#outerContainer{
+    width: 100%;
+    /* border: 1px solid red; */
+
+    margin: auto;
+    display: flex;
+    background-color: lightcyan;
+
+}
+.title_{
+    text-align: center;
+    background:linear-gradient(45deg,rgb(223, 170, 170),rgb(146, 178, 184),rgb(124, 101, 101));
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 #container{
     margin: auto;
+    background-color: lightcyan;
+   
+    
 }
 #todo_ip{
     margin: auto;
-
+    width: 50%;
     /* border:  1px solid red; */
     height: 100px;
     display: flex;
@@ -20,6 +37,7 @@
     border-left: 1px solid gray;
     border-bottom: 3px solid gray;
     border-radius: 33px;
+    
 }
 .inputbox-check{
     /* /* width: 30px; */
@@ -39,10 +57,57 @@
     font-size: 25px;
     font-weight: bold;
     outline: none;
+    border: none;
     height: 35px;
     padding: 2px;
     margin: 20px;
     border-left: 1px solid gray;
     border-bottom: 3px solid gray;
     border-radius: 12px;
+    background:linear-gradient(45deg,rgb(223, 170, 170),rgb(146, 178, 184),rgb(124, 101, 101));
+
+}
+.th_col1{
+    /* border: 1px solid blue; */
+    width: 150px;
+    color: darkred;
+    padding: 10px;
+    font-size: 25px;
+    border-bottom: 3px solid rgb(216, 120, 120);
+    border-radius: 15px;    
+   
+}
+.th_col{
+    /* border: 1px solid red; */
+    width: 150px;
+    border-radius: 15px;
+    padding: 10px;
+   
+
+
+}
+#showdata{
+    width: 50%;
+    background-color: rgb(223, 235, 235);
+    padding: 15px;
+    
+}
+tr:hover{
+    background-color: rgb(203, 235, 235);
+ 
+
+}
+.del-btn{
+    /* background-color: aquamarine; */
+    /* padding: 2px; */
+    margin: 20px;
+    /* border-left: 1px solid gray; */
+    /* border-bottom: 3px solid gray; */
+    border-radius: 12px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    background:linear-gradient(45deg,rgb(223, 170, 170),rgb(146, 178, 184),rgb(124, 101, 101));
+
+    /* padding: 15px; */
 }

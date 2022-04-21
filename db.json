@@ -1,0 +1,18 @@
+{
+  "todos": [
+    {
+      "status": false,
+      "title": "practice",
+      "desc": "react",
+      "date": "2022-04-21",
+      "id": 1
+    },
+    {
+      "status": false,
+      "title": "practice",
+      "desc": "electron js",
+      "date": "2022-04-22",
+      "id": 2
+    }
+  ]
+}
