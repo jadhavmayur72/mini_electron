@@ -100,19 +100,17 @@
 .fix_title{
     position: absolute;
     top: auto;
-    /* background-color: aquamarine; */
-    z-index: 1;
-    opacity: 100%;
+    background-color: rgb(198, 224, 216);
+    z-index: 2;
+    
+  top: 35;
+    /* opacity: 100%; */
 
 }
 .scrolling-table{
     position:relative;
     top: 25px;
-    z-index: 2;
- 
-
-
-
+    z-index: 1;
 }
 tr:hover{
     background-color: rgb(203, 235, 235);
@@ -191,7 +189,7 @@ tr:hover{
     }
     .btn-add{
         background-color: rgb(183, 236, 220);
-        width: 25px;
+        width: 50%;
         font-size: 25px;
         font-weight: bold;
         outline: none;
@@ -263,7 +261,7 @@ tr:hover{
     }
     .btn-add{
         background-color: rgb(183, 236, 220);
-        width: 25px;
+        width: 60%;
         font-size: 25px;
         font-weight: bold;
         outline: none;

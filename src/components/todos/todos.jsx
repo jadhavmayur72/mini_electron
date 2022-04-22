@@ -76,13 +76,13 @@ export const Todos = () => {
             value={stat}
             onChange={(el) => setStat(el.target.value)}
           />
-
+              {/* post Buttton------------------------------------- */}
           <button className="btn-add" onClick={addData}>
             +
           </button>
         </div>
    
-     
+           {/* ---------------------------GetData------------------- */}
       <div id="showdata">
         <table className="fix_title">
           <thead>
@@ -93,6 +93,7 @@ export const Todos = () => {
             </tr>
           </thead>
         </table>
+       
         {dataList.map((e, i) => {
           return (
             <div key={i}>
@@ -109,6 +110,8 @@ export const Todos = () => {
                     <th className="th_col">
                       <h4>{e.date}</h4>
                     </th>
+
+                    {/* delete button--------------------- */}
                     <th className="th_col" 
                       onClick={() => {
                         fetch(`http://localhost:9001/todos/${e.id}`, {
